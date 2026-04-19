@@ -137,7 +137,56 @@ TODO
 
 ## 参考資料
 
-- Robert C. Martin『Clean Architecture』
-- Gang of Four『デザインパターン』(1994)
-- Alan Kay の OOP 原典エッセイ (Smalltalk)
-- Go の公式ブログ: [Effective Go - Interfaces](https://go.dev/doc/effective_go#interfaces)
+### OOP の原点
+
+- **Alan Kay** — 「OOP」という用語の提唱者、Smalltalk の設計者
+  - 論文: "The Early History of Smalltalk" (1993, *ACM SIGPLAN Notices* Vol. 28, No. 3)
+    - DOI: `10.1145/155360.155364`
+    - 要点: OOP は当初「メッセージパッシング」が本質であり、クラスや継承は副次的だったと語る一次資料
+  - FAQ: "Dr. Alan Kay on the Meaning of 'Object-Oriented Programming'" (2003)
+    - 有名な一文: *"I made up the term 'object-oriented', and I can tell you I did not have C++ in mind."*
+- **Ole-Johan Dahl, Kristen Nygaard** — Simula-67 の設計者（OOP の言語的起源、クラスの概念の導入）
+  - レポート: "SIMULA 67 COMMON BASE LANGUAGE" (1968, Norwegian Computing Center)
+
+### デザインパターンと「継承より合成」
+
+- **Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides (Gang of Four)**
+  - 書籍: 『**Design Patterns: Elements of Reusable Object-Oriented Software**』 (1994, Addison-Wesley)
+  - 序文で "Favor object composition over class inheritance." を明示。本プロジェクトの方針の原典
+
+### SOLID 原則
+
+- **Robert C. Martin (Uncle Bob)** — SOLID 原則の整理・命名者（頭字語は Michael Feathers が命名）
+  - 論文: "Design Principles and Design Patterns" (2000, Object Mentor)
+    - SOLID 原則の原型となる 5 原則が提示された最初の文書
+  - 書籍: 『**Clean Architecture: A Craftsman's Guide to Software Structure and Design**』 (2017, Prentice Hall)
+  - 書籍: 『**Clean Code**』 (2008, Prentice Hall)
+- 各原則の原典
+  - **OCP (Open/Closed Principle)**: **Bertrand Meyer**『Object-Oriented Software Construction』 (1988 初版、1997 第2版、Prentice Hall)
+  - **LSP (Liskov Substitution Principle)**: **Barbara Liskov** "Data Abstraction and Hierarchy" (1987, *ACM SIGPLAN Notices* Vol. 23, No. 5, OOPSLA keynote)
+    - DOI: `10.1145/62138.62141`
+  - **SRP / ISP / DIP**: 上記 Robert C. Martin の論文と書籍で定式化
+
+### Go の OOP 観
+
+- **Rob Pike** "Go at Google: Language Design in the Service of Software Engineering" (2012)
+  - https://go.dev/talks/2012/splash.article
+  - Go がなぜ継承を採用しなかったか、インターフェースをなぜ暗黙実装にしたかの設計判断が語られている
+- **Effective Go** — Go 公式の慣用表現ガイド
+  - https://go.dev/doc/effective_go
+  - 特に "Interfaces" セクション: https://go.dev/doc/effective_go#interfaces
+
+### ドメインモデリング / リファクタリング
+
+- **Eric Evans**『**Domain-Driven Design: Tackling Complexity in the Heart of Software**』 (2003, Addison-Wesley)
+- **Martin Fowler**『**Refactoring: Improving the Design of Existing Code**』 (1999 初版、2018 第2版、Addison-Wesley)
+- **Martin Fowler**『**Patterns of Enterprise Application Architecture**』 (2002, Addison-Wesley)
+
+### 読む順序の推奨
+
+1. **Effective Go - Interfaces** (無料・短時間) — Go の前提を押さえる
+2. **Rob Pike "Go at Google"** (無料・短時間) — Go の設計思想を知る
+3. **Robert C. Martin "Design Principles and Design Patterns" (2000 論文)** (無料) — SOLID の全体像
+4. **Robert C. Martin『Clean Architecture』** — 体系的な整理
+5. **Gang of Four『Design Patterns』** — パターンの原典。全部読まず索引的に使う
+6. **Barbara Liskov / Bertrand Meyer の原典** — 興味が出たら深掘り
